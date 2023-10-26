@@ -1,0 +1,47 @@
+---
+layout: home.njk
+title: Serverless Gems
+suffix: " "
+---
+
+
+<div class="max-w-full prose">
+
+  <div class="md:w-3/5">
+    <h1 class="lg:text-5xl">Serverless Gems is a collection of serverless functions that you can use in your projects</h1>
+  </div>
+
+  <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 md:mt-16">
+      <h2 class="sm:col-span-2 md:col-span-3 m-0">Select your serverless platform:</h2>
+
+      <article class="bg-zinc-200/50 dark:bg-zinc-800 border-2 border-transparent hover:border-red-600 transition-border duration-200 ease-in-out p-4 rounded relative flex justify-center items-center h-24 sm:h-32 md:h-40">
+        <h3>
+          <a class="absolute inset-0" href="https://serverless-gems.netlify.app">
+            <span class="sr-only">Serverless Gems for Netlify</span>
+          </a>
+        </h3>
+        {{ "/src/assets/images/netlify-darkmode.svg" | svgContents("w-32 h-auto hidden dark:block") | safe }}
+        {{ "/src/assets/images/netlify-lightmode.svg" | svgContents("w-32 h-auto dark:hidden") | safe }}
+      </article>
+
+      <article class="bg-zinc-200/50 dark:bg-zinc-800 border-2 border-transparent hover:border-red-600 transition-border duration-200 ease-in-out p-4 rounded relative flex justify-center items-center h-24 sm:h-32 md:h-40">
+        <h3>
+          <a class="absolute inset-0" href="https://serverless-gems.pages.dev">
+            <span class="sr-only">Serverless Gems for Cloudflare Pages</span>
+          </a>
+        </h3>
+        {{ "/src/assets/images/cloudflare-pages.svg" | svgContents("w-32 h-auto") | safe }}
+      </article>
+
+      <article class="bg-zinc-200/50 dark:bg-zinc-800 border-2 border-transparent hover:border-red-600 transition-border duration-200 ease-in-out p-4 rounded relative flex justify-center items-center h-24 sm:h-32 md:h-40">
+        <h3>
+          <a class="absolute inset-0" href="https://serverless-gems.vercel.app">
+            <span class="sr-only">Serverless Gems for Vercel</span>
+          </a>
+        </h3>
+        {{ "/src/assets/images/vercel.svg" | svgContents("w-32 h-auto text-black dark:text-white") | safe }}
+      </article>
+
+  </div>
+
+</div>
