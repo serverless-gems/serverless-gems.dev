@@ -1,0 +1,18 @@
+---
+permalink: /sitemap-index.xml
+eleventyExcludeFromCollections: true
+sitemaps:
+  - "https://serverless-gems.dev/sitemap.xml"
+  - "https://serverless-gems.netlify.app/sitemap.xml"
+  - "https://serverless-gems.pages.dev/sitemap.xml"
+  - "https://serverless-gems.vercel.app/sitemap.xml"
+---
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="{{ build.url }}/sitemap.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for sitemap in sitemaps -%}
+  <sitemap>
+      <loc>{{ sitemap }}</loc>
+      <lastmod>{{ build.timestamp.iso }}</lastmod>
+    </sitemap>
+  {%- endfor -%}
+</sitemapindex>

@@ -1,16 +1,26 @@
 ---
 permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
+satellites:
+  - "https://serverless-gems.netlify.app/"
+  - "https://serverless-gems.pages.dev/"
+  - "https://serverless-gems.vercel.app/"
 ---
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="{{ build.url }}/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {%- for page in satellites %}
+    <url>
+      <loc>{{ page }}</loc>
+      <lastmod>{{ build.timestamp.iso }}</lastmod>
+    </url>
+  {%- endfor %}
   {%- for page in collections.all %}
-    {%- if page.url and page.data.title and page.data.excludeFromSitemap != true -%}
-      {%- set absoluteUrl %}{{ page.url | htmlBaseUrl(metadata.url) }}{% endset -%}
-      <url>
-        <loc>{{ absoluteUrl }}</loc>
-        <lastmod>{{ page.date | htmlDateString }}</lastmod>
-      </url>
-    {%- endif -%}
+  {%- if page.url and page.data.title and page.data.excludeFromSitemap != true %}
+    {%- set absoluteUrl %}{{ page.url | htmlBaseUrl(metadata.url) }}{% endset %}
+    <url>
+      <loc>{{ absoluteUrl }}</loc>
+      <lastmod>{{ page.date | htmlDateString }}</lastmod>
+    </url>
+  {%- endif %}
   {%- endfor %}
 </urlset>
