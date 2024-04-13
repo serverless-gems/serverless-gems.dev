@@ -4,7 +4,7 @@ import colorScheme from "./_detectColorScheme";
 
 const {trackEvent, trackPageview, enableAutoOutboundTracking} = Plausible({
   domain: "serverless-gems.dev",
-  apiHost: "https://plausible.serverless-gems.dev",
+  apiHost: "https://firebird.sunnypixels.workers.dev/api/event",
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         prefersColorScheme: colorScheme(),
         userAgent: navigator.userAgent,
         deviceWidth: window.innerWidth,
+        project: "serverless-gems.dev"
       },
     }
   );
